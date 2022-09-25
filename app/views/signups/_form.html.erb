@@ -1,0 +1,14 @@
+<form class= "container-fluid">
+  <div class="mb-3 py-5 px-5 mx-5">
+    <%= form_with model: @signup do |form| %>
+      <%= form.label :firstname, "First Name", class: "form-label" %>
+      <%= form.text_field :firstname, class: "form-text form-control" %>
+      <%= form.label :email, "Email", class: "form-label" %>
+      <%= form.text_field :email, class: "form-text form-control" %>
+      </div>
+      <div class="px-5 mx-5 py-3">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+</form>
