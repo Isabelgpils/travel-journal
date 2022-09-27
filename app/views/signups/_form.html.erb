@@ -1,12 +1,20 @@
-<form class= "container-fluid">
+<form class= "container">
   <div class="mb-3 py-5 px-5 mx-5">
-    <%= form_with model: @signup do |form| %>
-      <%= form.label :firstname, "First Name", class: "form-label" %>
-      <%= form.text_field :firstname, class: "form-text form-control" %>
-      <%= form.label :email, "Email", class: "form-label" %>
-      <%= form.text_field :email, class: "form-text form-control" %>
+    <%= form_with model: @signups do |form| %>
+      <div class="row">
+        <div class= "col-6">
+          <%= form.label :firstname, "First Name", class: "form-label" %>
+          <%= form.text_field :firstname, class: "form-text form-control" %>
+          <% signup.errors.full_messages_for(:firstname).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
+        <div class= col-6>
+          <%= form.label :email, "Email", class: "form-label" %>
+          <%= form.text_field :email, class: "form-text form-control" %>
+        </div>
       </div>
-      <div class="px-5 mx-5 py-3">
+      <div class="pt-5">
         <%= form.submit %>
       </div>
     <% end %>
