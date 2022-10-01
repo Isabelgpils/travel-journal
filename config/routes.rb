@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/stories", to: "pages#stories"
   get "/home", to: "pages#home"
   get "/thanks", to: "pages#thanks"
-  
+
   resources :signups
 
 end

@@ -1,22 +1,25 @@
-<form class= "container">
-  <div class="mb-3 py-5 px-5 mx-5">
-    <%= form_with model: @signups do |form| %>
-      <div class="row">
-        <div class= "col-6">
-          <%= form.label :firstname, "First Name", class: "form-label" %>
-          <%= form.text_field :firstname, class: "form-text form-control" %>
-          <% signup.errors.full_messages_for(:firstname).each do |message| %>
-            <div><%= message %></div>
-          <% end %>
-        </div>
-        <div class= col-6>
-          <%= form.label :email, "Email", class: "form-label" %>
-          <%= form.text_field :email, class: "form-text form-control" %>
-        </div>
+<main class= "container container-page">
+  <h1 class= "pt-5 text-center">Sign Up </h1>
+  <%= form_with model: @signup do |form| %>
+    <div class= "container-fluid">
+      <div class= "pt-5 pb-5">
+        <h3>First Name</h3>
+        <%= form.text_field :firstname, max: 30, size: 30 %>
+        <% @signup.errors.full_messages_for(:firstname).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
       </div>
-      <div class="pt-5">
-        <%= form.submit %>
+
+      <div class= "pb-5">
+        <h3><%= form.label :email %><br></h3>
+        <%= form.text_field :email, max: 30, size: 30 %><br>
+        <% @signup.errors.full_messages_for(:email).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</form>
+      <div>
+      <%= form.submit class: "btn btn-lg btn-warning" %>
+      </div>
+    </div>
+  <% end %>
+</main>
