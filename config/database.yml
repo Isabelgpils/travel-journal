@@ -84,3 +84,9 @@ production:
   database: travel_journal_production
   username: travel_journal
   password: <%= ENV["TRAVEL_JOURNAL_DATABASE_PASSWORD"] %>
+
+development:
+  adapter: postgresql
+  host: localhost
+  username: user
+  database: app-dev
