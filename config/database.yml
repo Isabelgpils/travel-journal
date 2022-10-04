@@ -84,3 +84,8 @@ production:
   database: travel_journal_production
   username: travel_journal
   password: <%= ENV["TRAVEL_JOURNAL_DATABASE_PASSWORD"] %>
+  url: <%ENV['IGP_TRAVEL_JOURNAL_URL'] %>
+# production:
+#   <<: *default
+#   database: my_app_production
+#   url: <%= ENV['MY_APP_DATABASE_URL'] %>
